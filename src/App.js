@@ -33,34 +33,36 @@ function App() {
 
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 15) ? 'app warm' : 'app cold') : 'app'}>
-      <main>
-        <div className="search-box">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange={e => setQuery(e.target.value)}
-            value={query}
-          />
-          <button className='button-box ml-2' onClick={search}>
-            <i className="mybutton fas fa-search"></i>
-          </button>
-        </div>
-        {(typeof weather.main != "undefined") ? (
-          <div>
-            <div className="location-box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">
-                {Math.round(weather.main.temp)}°c
-            </div>
-              <div className="weather">{weather.weather[0].main}</div>
-            </div>
+      <div className='container-fluid'>
+        <main>
+          <div className="search-box">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search..."
+              onChange={e => setQuery(e.target.value)}
+              value={query}
+            />
+            <button className='button-box ml-2' onClick={search}>
+              <i className="mybutton fas fa-search"></i>
+            </button>
           </div>
-        ) : ('')}
-      </main>
+          {(typeof weather.main != "undefined") ? (
+            <div>
+              <div className="location-box">
+                <div className="location">{weather.name}, {weather.sys.country}</div>
+                <div className="date">{dateBuilder(new Date())}</div>
+              </div>
+              <div className="weather-box">
+                <div className="temp">
+                  {Math.round(weather.main.temp)}°c
+            </div>
+                <div className="weather">{weather.weather[0].main}</div>
+              </div>
+            </div>
+          ) : ('')}
+        </main>
+      </div>
     </div>
   );
 }
