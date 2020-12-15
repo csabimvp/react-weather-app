@@ -43,7 +43,7 @@ function App() {
               onChange={e => setQuery(e.target.value)}
               value={query}
             />
-            <button className='button-box ml-2' onClick={search}>
+            <button className='button-box ml-4' onClick={search}>
               <i className="mybutton fas fa-search"></i>
             </button>
           </div>

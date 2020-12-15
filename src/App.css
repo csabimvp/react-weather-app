@@ -58,7 +58,6 @@ main {
 .button-box {
   align-items: flex-end;
   position: absolute;
-  padding-right: 50%;
   color: #313131;
   font-size: 35px;
   appearance: none;
